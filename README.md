@@ -78,7 +78,7 @@ type alias Shared = {
 同様に、
 
 ```elm
-huga : Three -> Three -> Three
+huga : Three Int -> Three Int -> Three Int
 ```
 のような型もThreeが3つ展開される。
 これも引数と返り値に出てくる型を全て最初に列挙してやれば倍々ゲームは避けられるはず
