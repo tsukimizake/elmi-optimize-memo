@@ -65,7 +65,7 @@ TAlias (author.project.Main.Three)
 
 type alias Shared = {
       companies : Dict Id Company
-     ,user : Dict Id User
+     ,users : Dict Id User
      , ...
 }
 ```
