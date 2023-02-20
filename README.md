@@ -22,14 +22,22 @@ hoge: Three Int
 読みやすくすると
 
 ```hs
-TAlias (author.project.Main.Three) [(a, elm.core.Basics.Int[])] (Record [(p, elm.core.Basics.Int[]), (q, elm.core.Basics.Int[]), (r, elm.core.Basics.Int[])])
+TAlias (author.project.Main.Three)
+  [(a, elm.core.Basics.Int[])]
+  (Record [
+    (p, elm.core.Basics.Int[])
+  , (q, elm.core.Basics.Int[])
+  , (r, elm.core.Basics.Int[])
+  ])
 ```
 的な感じ
 
 理想としては
 
 ```hs
-TAlias (author.project.Main.Three) [(a, elm.core.Basics.Int[])] (Record [(p, a), (q, a), (r,a)])
+TAlias (author.project.Main.Three)
+  [(a, elm.core.Basics.Int[])] 
+  (Record [(p, a), (q, a), (r,a)])
 ```
 のような感じか
 
