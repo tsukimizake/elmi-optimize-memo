@@ -30,7 +30,7 @@ TAlias (author.project.Main.Three)
   , (r, elm.core.Basics.Int[])
   ])
 ```
-的な感じ
+的な感じ。aliasに型引数を渡す度に中身が(使用回数+1)回ベタ書きされるので大きなプロジェクトだと大変なことになる。
 
 理想としては
 
