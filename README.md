@@ -54,7 +54,7 @@ TAlias (author.project.Main.Three)
 
 右辺に型引数名の `a` も残してくれていると楽だったのだが `elm.core.Basics.Int` しか残ってないので思ったよりちょっとだるそう
 
-やるならCanonicalizeでTAliasを作っている部分から弄るか？
+やるならCanonicalizeでTAliasを作っている部分から弄るか、それともバイナリエンコード部分で部分木の一致を見つけるか
 
 
 #### 改善案1の問題点
