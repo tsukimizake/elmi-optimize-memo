@@ -109,8 +109,8 @@ TAlias (author.project.Main.Three)
           [(a, elm.core.Basics.Int[])] 
           (Record 
             [(p, author.project.Main.Three.a)
-            , (q, author.project.Main.Three.a)
-            , (r,author.project.Main.Three.a)]))
+            ,(q, author.project.Main.Three.a)
+            ,(r,author.project.Main.Three.a)]))
 　　   , (q, author.project.Main.Three.a)
 　   　, (r, author.project.Main.Three.a)])
 ```
