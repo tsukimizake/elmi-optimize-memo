@@ -56,7 +56,47 @@ TAlias (author.project.Main.Three)
 
 バイナリエンコード部分で部分木の一致を見つけようとすると愚直にやると計算量が `(型式のサイズ)^2` になりそう、文脈を持ち回りながらエンコードするか、CanonicalizeでTAliasを作っている部分から弄る必要があるか？
 
-あと、どこまで書くと一意に左辺の型変数と右辺の型の部分木との対応が取れるか詰める必要がある
+#### 改善案1の問題点
+どこまで書くと一意に左辺の型変数と右辺の型の部分木との対応が取れるか詰める必要がある
+
+```csv
+piyo : Three (Three Int Int Int) Char Char
+```
+
+は、現状
+
+```hs
+TAlias (author.project.Main.Three)
+  [(a, elm.core.Basics.Int[])]
+  (Record [
+    (p, TAlias (author.project.Main.Three)
+        [(a, elm.core.Basics.Int[])]
+        (Record [
+          (p, elm.core.Basics.Int[])
+        , (q, elm.core.Basics.Int[])
+        , (r, elm.core.Basics.Int[])
+        ])
+    )
+  , (q, elm.core.Basics.Char[])
+  , (r, elm.core.Basics.Char[])
+  ])
+```
+
+となるが、
+
+
+```hs
+TAlias (author.project.Main.Three)
+  [(a, elm.core.Basics.Char[])]
+  (Record [(p, 
+      TAlias (author.project.Main.Three)
+        [(a, elm.core.Basics.Int[])] 
+        (Record [(p, a), (q, a), (r,a)])
+  ), (q, a), (r,a)])
+```
+
+とすると内側の `(Record [(p, a), (q, a), (r,a)])` のaがCharなのかIntなのか困る。
+
 
 #### 改善案1+
 社プロジェクトだと
