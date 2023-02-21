@@ -68,8 +68,8 @@ piyo : Three (Three Int Int Int) Char Char
 ```hs
 TAlias (author.project.Main.Three)
   [(a, elm.core.Basics.Int[])]
-  (Record [
-    (p, TAlias (author.project.Main.Three)
+  (Record 
+　　  [(p, TAlias (author.project.Main.Three)
         [(a, elm.core.Basics.Int[])]
         (Record [
           (p, elm.core.Basics.Int[])
@@ -77,9 +77,9 @@ TAlias (author.project.Main.Three)
         , (r, elm.core.Basics.Int[])
         ])
     )
-  , (q, elm.core.Basics.Char[])
-  , (r, elm.core.Basics.Char[])
-  ])
+　  , (q, elm.core.Basics.Char[])
+　  , (r, elm.core.Basics.Char[])
+　  ])
 ```
 
 となるが、
