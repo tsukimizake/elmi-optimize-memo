@@ -96,6 +96,7 @@ TAlias (author.project.Main.Three)
 ```
 
 とすると内側の `(Record [(p, a), (q, a), (r,a)])` のaがCharなのかIntなのか困る。
+
 困るような気がしたが深さ優先で見ていくとうまい具合にシャドーイングされるか？
 
 #### 改善案1+
