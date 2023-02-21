@@ -59,7 +59,7 @@ TAlias (author.project.Main.Three)
 #### 改善案1の問題点
 どこまで書くと一意に左辺の型変数と右辺の型の部分木との対応が取れるか詰める必要がある
 
-```csv
+```elm
 piyo : Three (Three Int Int Int) Char Char
 ```
 
