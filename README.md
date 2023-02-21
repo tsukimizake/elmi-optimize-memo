@@ -88,11 +88,12 @@ TAlias (author.project.Main.Three)
 ```hs
 TAlias (author.project.Main.Three)
   [(a, elm.core.Basics.Char[])]
-  (Record [(p, 
+  (Record
+    [(p, 
       TAlias (author.project.Main.Three)
-        [(a, elm.core.Basics.Int[])] 
-        (Record [(p, a), (q, a), (r,a)])
-  ), (q, a), (r,a)])
+        [(a, elm.core.Basics.Int[])]
+        (Record [(p, a), (q, a), (r,a)]))
+    , (q, a), (r,a)])
 ```
 
 とすると内側の `(Record [(p, a), (q, a), (r,a)])` のaがCharなのかIntなのか読むときに困る。
@@ -103,11 +104,15 @@ aだけだと `Three a` と `Two a = (a, a)` みたいなのが区別できな�
 ```hs
 TAlias (author.project.Main.Three)
   [(a, elm.core.Basics.Char[])]
-  (Record [(p, 
-      TAlias (author.project.Main.Three)
-        [(a, elm.core.Basics.Int[])] 
-        (Record [(p, author.project.Main.Three.a), (q, author.project.Main.Three.a), (r,author.project.Main.Three.a)])
-  ), (q, author.project.Main.Three.a), (r, author.project.Main.Three.a)])
+  (Record 
+    [(p, TAlias (author.project.Main.Three)
+          [(a, elm.core.Basics.Int[])] 
+          (Record 
+            [(p, author.project.Main.Three.a)
+            , (q, author.project.Main.Three.a)
+            , (r,author.project.Main.Three.a)]))
+　　   , (q, author.project.Main.Three.a)
+　   　, (r, author.project.Main.Three.a)])
 ```
 
 的に型名でプレフィクスするか
