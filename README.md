@@ -35,8 +35,8 @@ TAlias (author.project.Main.Three)
   [(a, elm.core.Basics.Int[])]
   (Record 
    [(p, elm.core.Basics.Int[])
-   , (q, elm.core.Basics.Int[])
-   , (r, elm.core.Basics.Int[])
+   ,(q, elm.core.Basics.Int[])
+   ,(r, elm.core.Basics.Int[])
    ])
 ```
 的な感じ。aliasに型引数を渡す度に中身が(使用回数+1)回ベタ書きされるので大きなプロジェクトだと大変なことになる。
@@ -71,11 +71,11 @@ TAlias (author.project.Main.Three)
   (Record 
 　　  [(p, TAlias (author.project.Main.Three)
         [(a, elm.core.Basics.Int[])]
-        (Record [
-          (p, elm.core.Basics.Int[])
-        , (q, elm.core.Basics.Int[])
-        , (r, elm.core.Basics.Int[])
-        ])
+        (Record 
+         [ (p, elm.core.Basics.Int[])
+         , (q, elm.core.Basics.Int[])
+         , (r, elm.core.Basics.Int[])
+         ])
     )
 　  , (q, elm.core.Basics.Char[])
 　  , (r, elm.core.Basics.Char[])
